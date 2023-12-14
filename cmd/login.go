@@ -90,7 +90,7 @@ func checkGithubToken(account string, token string) {
 
 	// 解析结果
 	if resp.StatusCode == http.StatusOK {
-		fmt.Println("登录成功，欢迎使用isx开发工具")
+		fmt.Println("登录成功，欢迎使用i开发工具")
 	} else {
 		fmt.Println("无法验证token合法性，登录失败")
 		os.Exit(0)
