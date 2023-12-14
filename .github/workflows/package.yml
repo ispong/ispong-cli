@@ -2,8 +2,7 @@ name: 打包i工具
 
 on:
   release:
-    types:
-      - created
+    types: [published]
 
 jobs:
 
