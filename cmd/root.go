@@ -13,7 +13,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "ispong-cli",
+	Use:   "i",
 	Short: "ispong个人工具集",
 	Long:  `ispong个人工具集`,
 	// Uncomment the following line if your bare application
