@@ -53,3 +53,12 @@ jobs:
             ./target/isx_windows_amd64.exe
             ./target/isx_linux_amd64
             ./target/isx_darwin_arm64
+
+      - name: 推到github中
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ./target/isx_windows_amd64.exe
+            ./target/isx_linux_amd64
+            ./target/isx_darwin_arm64
+          token: ${{ secrets.GITHUB_TOKEN }}
