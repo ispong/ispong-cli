@@ -3,7 +3,7 @@
 ##### 安装命令
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/isxcode/isx-open/main/isx-cli/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ispong/ispong-cli/main/install.sh)"
 ```
 
 ##### 使用命令
