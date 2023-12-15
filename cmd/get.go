@@ -44,7 +44,7 @@ var getCmd = &cobra.Command{
 		}
 
 		// 执行命令下载代码
-		blogRepository := "https://github.com/ispong/ispong-blogs.git"
+		blogRepository := "https://" + viper.GetString("token") + "@github.com/ispong/ispong-blogs.git"
 		gitCmd := exec.Command("git", "clone", blogRepository)
 		gitCmd.Stdout = os.Stdout
 		gitCmd.Stderr = os.Stderr
