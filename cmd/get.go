@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"log"
 	"os"
 	"os/exec"
 )
@@ -45,10 +46,13 @@ var getCmd = &cobra.Command{
 		// 执行命令下载代码
 		blogRepository := "https://github.com/ispong/ispong-blogs.git"
 		gitCmd := exec.Command("git", "clone", blogRepository)
+		gitCmd.Stdout = os.Stdout
+		gitCmd.Stderr = os.Stderr
 		gitCmd.Dir = blogPath
 		err = gitCmd.Run()
+
 		if err != nil {
-			fmt.Println(err)
+			log.Fatal(err)
 			os.Exit(1)
 		} else {
 			fmt.Println("下载成功")

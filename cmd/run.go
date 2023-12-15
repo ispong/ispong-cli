@@ -6,6 +6,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/viper"
+	"log"
 	"os"
 	"os/exec"
 
@@ -21,9 +22,12 @@ var runCmd = &cobra.Command{
 
 		// 执行命令docker启动项目
 		dockerCmd := exec.Command("docker", "run", "--restart=always", "--name", "ispong-blogs", "-v", viper.GetString("blog-path")+"/ispong-blogs:/hexo", "-p", "4000:4000", "-d", "isxcode/hexo")
+		dockerCmd.Stdout = os.Stdout
+		dockerCmd.Stderr = os.Stderr
+
 		err := dockerCmd.Run()
 		if err != nil {
-			fmt.Println(err)
+			log.Fatal(err)
 			os.Exit(1)
 		} else {
 			fmt.Println("启动成功")
