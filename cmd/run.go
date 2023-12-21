@@ -30,7 +30,7 @@ var runCmd = &cobra.Command{
 				"--name ispong-blogs " +
 				"-v" + blogDirPath + ":/hexo " +
 				"-p 4000:4000 " +
-				"-d isxcode/hexo"
+				"-d registry.cn-shanghai.aliyuncs.com/ispong/hexo:latest"
 
 			dockerCmd := exec.Command("bash", "-c", dockerCommand)
 			dockerCmd.Stdout = os.Stdout
